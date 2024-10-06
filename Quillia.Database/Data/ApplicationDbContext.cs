@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Quillia.Models;
 
-namespace Quillia.Data
+namespace Quillia.Database.Data
 {
     public class ApplicationDbContext : DbContext
     {

@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quillia", "Quillia\Quillia.csproj", "{A38CEADB-1862-44D4-B36D-EA48F0D18CEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quillia", "Quillia\Quillia.csproj", "{A38CEADB-1862-44D4-B36D-EA48F0D18CEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quillia.Database", "Quillia.Database\Quillia.Database.csproj", "{BE01F007-20B1-48EA-9AEB-C10231F55231}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quillia.Models", "Quillia.Models\Quillia.Models.csproj", "{2E9697C7-AD7D-4245-B014-286A812BF503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quillia.Utility", "Quillia.Utility\Quillia.Utility.csproj", "{0B641EDE-C2C0-4304-9254-8BC296323B9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{A38CEADB-1862-44D4-B36D-EA48F0D18CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A38CEADB-1862-44D4-B36D-EA48F0D18CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A38CEADB-1862-44D4-B36D-EA48F0D18CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE01F007-20B1-48EA-9AEB-C10231F55231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE01F007-20B1-48EA-9AEB-C10231F55231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE01F007-20B1-48EA-9AEB-C10231F55231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE01F007-20B1-48EA-9AEB-C10231F55231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E9697C7-AD7D-4245-B014-286A812BF503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9697C7-AD7D-4245-B014-286A812BF503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9697C7-AD7D-4245-B014-286A812BF503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9697C7-AD7D-4245-B014-286A812BF503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B641EDE-C2C0-4304-9254-8BC296323B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B641EDE-C2C0-4304-9254-8BC296323B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B641EDE-C2C0-4304-9254-8BC296323B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B641EDE-C2C0-4304-9254-8BC296323B9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

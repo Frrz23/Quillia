@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Quillia.Data;
+using Quillia.Database.Data;
+using Quillia.Database.Data;
 using Quillia.Models;
 
 namespace Quillia.Controllers

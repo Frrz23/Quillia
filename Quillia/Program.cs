@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Quillia.Data;
+using Quillia.Database.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
