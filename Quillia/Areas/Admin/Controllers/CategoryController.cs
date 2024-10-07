@@ -1,20 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Quillia.Database.Data;
-using Quillia.Database.Data;
+using Quillia.Database.Repositary.IRepository;
 using Quillia.Models;
 
-namespace Quillia.Controllers
+namespace Quillia.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db)
+        
+        private readonly IUnitOfWork _categoryRepo;
+        public CategoryController(IUnitOfWork db)
         {
-            _db = db;
+            _categoryRepo = db;
         }
         public IActionResult Index()
         {
-            List<Categorycs> objCatagoryList = _db.Categories.ToList();
+            List<Categorycs> objCatagoryList = _categoryRepo.Category.GetAll().ToList();
 
             return View(objCatagoryList);
         }
@@ -37,8 +39,8 @@ namespace Quillia.Controllers
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(obj);
-                _db.SaveChanges();
+                _categoryRepo.Category.Add(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "Category Created Successfully";
                 return RedirectToAction("Index");
             }
@@ -50,7 +52,7 @@ namespace Quillia.Controllers
             {
                 return NotFound();
             }
-            Categorycs? categoryFromDb = _db.Categories.Find(id);/*
+            Categorycs? categoryFromDb = _categoryRepo.Category.Get(u => u.Id == id);/*
             Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             Category? categoryFromDb2 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();*/
 
@@ -66,8 +68,8 @@ namespace Quillia.Controllers
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(obj);
-                _db.SaveChanges();
+                _categoryRepo.Category.Update(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "Category Updated Successfully";
 
                 return RedirectToAction("Index");
@@ -81,7 +83,7 @@ namespace Quillia.Controllers
             {
                 return NotFound();
             }
-            Categorycs? categoryFromDb = _db.Categories.Find(id);
+            Categorycs? categoryFromDb = _categoryRepo.Category.Get(u => u.Id == id);
 
             if (categoryFromDb == null)
             {
@@ -92,13 +94,13 @@ namespace Quillia.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Categorycs? obj = _db.Categories.Find(id);
+            Categorycs? obj = _categoryRepo.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _db.Categories.Remove(obj);
-            _db.SaveChanges();
+            _categoryRepo.Category.Remove(obj);
+            _categoryRepo.Save();
             TempData["success"] = "Category Deleted Successfully";
 
             return RedirectToAction("Index");
