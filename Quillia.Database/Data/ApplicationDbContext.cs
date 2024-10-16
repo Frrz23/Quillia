@@ -17,15 +17,18 @@ namespace Quillia.Database.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public DbSet<OrderHeader> OrderHeaders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             base.OnModelCreating(modelbuilder);
             modelbuilder.Entity<Categorycs>().HasData(
-                new Categorycs { Id = 1, Name = "action",  DisplayOrder = 1 },
-                new Categorycs { Id = 2, Name = "scifi",   DisplayOrder = 2 },
-                new Categorycs { Id = 3, Name = "history", DisplayOrder = 3 }
+                new Categorycs { Id = 1, Name = "Action", DisplayOrder = 1 },
+                new Categorycs { Id = 2, Name = "SciFi", DisplayOrder = 2 },
+                new Categorycs { Id = 3, Name = "Comedy", DisplayOrder = 3 },
+                new Categorycs { Id = 4, Name = "History", DisplayOrder = 4 }
                 );
             modelbuilder.Entity<Company>().HasData(
              new Company
