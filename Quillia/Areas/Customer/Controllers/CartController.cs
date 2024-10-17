@@ -4,6 +4,7 @@ using Quillia.Database.Repositary.IRepository;
 using Quillia.Models;
 using Quillia.Models.ViewModels;
 using Quillia.Utility;
+using Stripe.Checkout;
 using System.Security.Claims;
 
 namespace Quillia.Areas.Customer.Controllers
@@ -132,7 +133,7 @@ namespace Quillia.Areas.Customer.Controllers
 
                 //it is a regular customer account and we need to capture payment
                 //stripe logic
-                var domain = "https://localhost:7031/";
+                var domain = "https://localhost:44373/";
                 var options = new SessionCreateOptions
                 {
                     SuccessUrl = domain + $"customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
