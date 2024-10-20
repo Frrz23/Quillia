@@ -9,7 +9,7 @@ using Quillia.Database.Data;
 using Quillia.Database.Repositary.IRepository;
 namespace Quillia.Database.Repositary
 {
-    public  class Repository<T> : IRepositary<T> where T : class
+    public class Repository<T> : IRepositary<T> where T : class
     {
         private readonly ApplicationDbContext _db;
         internal DbSet<T> dbSet;
