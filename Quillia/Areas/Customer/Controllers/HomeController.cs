@@ -23,6 +23,9 @@ namespace Quillia.Areas.Customer.Controllers
         public IActionResult Index()
         {
             IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            var randomProducts = productList.OrderBy(p => Guid.NewGuid()).Take(3).ToList();
+            ViewBag.RandomProducts = randomProducts;
+
             return View(productList);
         }
 
