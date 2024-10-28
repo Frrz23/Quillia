@@ -130,9 +130,6 @@ namespace Quillia.Areas.Customer.Controllers
             {
                 //it is a regular customer account and we need to capture payment
                 //stripe logic
-
-                //it is a regular customer account and we need to capture payment
-                //stripe logic
                 //var domain = "https://localhost:7177/";
                 var domain = Request.Scheme + "://" + Request.Host.Value + "/";
                 var options = new SessionCreateOptions
