@@ -36,6 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\bootstrap-footer-01\bootstrap-footer-01\.DS_Store" />
+    <None Include="wwwroot\bootstrap-footer-01\bootstrap-footer-01\fonts\.DS_Store" />
+    <None Include="wwwroot\bootstrap-footer-01\bootstrap-footer-01\scss\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="wwwroot\js\order.js">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
