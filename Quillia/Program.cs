@@ -7,7 +7,6 @@ using Quillia.Utility;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Stripe;
 using Quillia.Database.DbInitializer;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
