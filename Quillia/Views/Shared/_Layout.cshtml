@@ -12,19 +12,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
 </head>
 <body>
     <header class="fw-bolder ">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-primary border-bottom box-shadow  p-3  ">
-            <div class="container-fluid " style="color: black;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-primary border-bottom box-shadow fs-5 p-1" >
+            <div class="container-fluid " style="color: black; ">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-book"></i> Quillia</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" ><i class="bi bi-book"></i> Quillia</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between " >
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link " asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
@@ -82,8 +84,12 @@
         </main>
     </div>
 
-    
-    <footer class="border-top footer  bg-dark  text-muted text-black">
+
+
+        
+    @await Html.PartialAsync("FooterPartial")
+    <!-- End of .container -->
+    @* <footer class="border-top footer  bg-dark  text-muted text-black">
         <section class="bg-dark-subtle d-flex justify-content-between  pt-3">
         <div >
                 <h1 class="fw-semibold  text-success-emphasis">Get connected with us on social networks:</h1>
@@ -110,39 +116,39 @@
             </div>
         </section>
         <div>
-            <div>
+            <div class="d-flex">
                 <h1>Quick Links</h1>
+                <h1>Support</h1>
+                <h1>Policies</h1>
+            </div>
+            <div class="d-flex">
                 <div class="d-flex flex-column">
                     <a href="#">Home</a>
                     <a href="#">Books</a>
                     <a href="#">About</a>
                     <a href="#">Pricing</a>
                 </div>
-                <h1>Support</h1>
-                <div>
+                
+                <div class="d-flex flex-column">
                     <a href="#">Order </a>
                     <a href="#">Summary</a>
                     <a href="#">FAQ</a>
                 </div>
-                <h1>Policies</h1>
-                <div>
+               
+                <div class="d-flex flex-column">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms Of Use</a>
                     <a href="#">Refund Policy</a>
                 </div>
             </div>
-            <div>
-                <a href="#">FAQ</a>
-                <a href="#">FAQ</a>
-                <a href="#">FAQ</a>
-            </div>
+           
         <h3 style="border-bottom: 1px solid #000; padding-left: 10px;">
         </h3>
         <div class="container text-center fw-bold text-black">
             &copy; 2024 -<i class="bi bi-book"></i> Quillia 
         </div>
         </div>
-    </footer> 
+    </footer>  *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
