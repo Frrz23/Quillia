@@ -114,12 +114,27 @@ namespace Quillia.Areas.Identity.Pages.Account
             public IEnumerable<SelectListItem> RoleList { get; set; }
 
 
-            [Required]
+            [Required(ErrorMessage = "Name is required.")]
             public string Name { get; set; }
+
+            [Required(ErrorMessage = "Street Address is required.")]
+            [StringLength(100, ErrorMessage = "Street Address cannot exceed 100 characters.")]
             public string? StreetAddress { get; set; }
+
+            [Required(ErrorMessage = "City is required.")]
+            [StringLength(50, ErrorMessage = "City cannot exceed 50 characters.")]
             public string? City { get; set; }
+
+            [Required(ErrorMessage = "State is required.")]
+            [StringLength(50, ErrorMessage = "State cannot exceed 50 characters.")]
             public string? State { get; set; }
+
+            [Required(ErrorMessage = "Postal Code is required.")]
+            [RegularExpression(@"^\d{5}(-\d{4})?$", ErrorMessage = "Postal Code must be in the format '12345' or '12345-6789'.")]
             public string? PostalCode { get; set; }
+
+            [Required(ErrorMessage = "Phone Number is required.")]
+            [Phone(ErrorMessage = "Invalid Phone Number format.")]
             public string? PhoneNumber { get; set; }
             public int? CompanyId { get; set; }
             [ValidateNever]
@@ -195,7 +210,7 @@ namespace Quillia.Areas.Identity.Pages.Account
                         await _userManager.AddToRoleAsync(user, SD.Role_Customer);
                     }
 
-                    TempData["success"] = "Company Registered successfully";
+                    TempData["success"] = "Registered successfully";
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
