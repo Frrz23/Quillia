@@ -12,6 +12,19 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
+
+
+.product-image {
+    height: 600px; /* Set a fixed height for all images */
+    width: 100%; /* Full width of container */
+    object-fit: cover; /* Fill the container, ensuring images appear uniform in height */
+    padding: 0; /* Remove padding to avoid extra spacing */
+    border-radius: 5px; /* Optional: adds slight rounding to corners */
+}
+
+
+
+
 .support {
     color: #ced4da;
     background-color:bla
