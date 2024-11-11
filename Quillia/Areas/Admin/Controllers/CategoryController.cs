@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Quillia.Database.Data;
 using Quillia.Database.Repositary.IRepository;
 using Quillia.Models;
@@ -30,6 +31,18 @@ namespace Quillia.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Categorycs obj)
         {
+            bool nameExists = _categoryRepo.Category.GetAll().Any(c => c.Name == obj.Name);
+            if (nameExists)
+            {
+                ModelState.AddModelError("Name", "A category with the same name already exists.");
+            }
+
+            bool displayOrderExists = _categoryRepo.Category.GetAll().Any(c => c.DisplayOrder == obj.DisplayOrder);
+            if (displayOrderExists)
+            {
+                ModelState.AddModelError("DisplayOrder", "A category with the same display order already exists.");
+            }
+
             if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("Name", "The DisplayOrder cannot exactly match the Name.");
@@ -51,6 +64,7 @@ namespace Quillia.Areas.Admin.Controllers
         }
         public IActionResult Edit(int? id)
         {
+
             if (id == null || id == 0)
             {
                 return NotFound();
@@ -68,6 +82,17 @@ namespace Quillia.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(Categorycs obj)
         {
+            bool nameExists = _categoryRepo.Category.GetAll().Any(c => c.Name == obj.Name && c.Id != obj.Id);
+            if (nameExists)
+            {
+                ModelState.AddModelError("Name", "A category with the same name already exists. Please choose a new name.");
+            }
+
+            bool displayOrderExists = _categoryRepo.Category.GetAll().Any(c => c.DisplayOrder == obj.DisplayOrder && c.Id != obj.Id);
+            if (displayOrderExists)
+            {
+                ModelState.AddModelError("DisplayOrder", "A category with the same display order already exists. Please choose a new display order.");
+            }
 
             if (ModelState.IsValid)
             {
