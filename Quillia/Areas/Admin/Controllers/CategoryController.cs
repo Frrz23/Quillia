@@ -31,7 +31,7 @@ namespace Quillia.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Categorycs obj)
         {
-            bool nameExists = _categoryRepo.Category.GetAll().Any(c => c.Name == obj.Name);
+            bool nameExists = _categoryRepo.Category.GetAll().Any(c => c.Name.ToLower() == obj.Name.ToLower());
             if (nameExists)
             {
                 ModelState.AddModelError("Name", "A category with the same name already exists.");
@@ -82,7 +82,7 @@ namespace Quillia.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(Categorycs obj)
         {
-            bool nameExists = _categoryRepo.Category.GetAll().Any(c => c.Name == obj.Name && c.Id != obj.Id);
+            bool nameExists = _categoryRepo.Category.GetAll().Any(c => c.Name.ToLower() == obj.Name.ToLower() && c.Id != obj.Id);
             if (nameExists)
             {
                 ModelState.AddModelError("Name", "A category with the same name already exists. Please choose a new name.");
