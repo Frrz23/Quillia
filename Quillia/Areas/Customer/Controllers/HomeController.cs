@@ -74,7 +74,11 @@ namespace Quillia.Areas.Customer.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
+        {
+            return View();
+        }
+        public IActionResult FAQ()
         {
             return View();
         }
