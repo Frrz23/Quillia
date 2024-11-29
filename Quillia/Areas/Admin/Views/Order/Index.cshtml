@@ -1,27 +1,27 @@
 ﻿@{
     var status = Context.Request.Query["status"];
-    var pending = "text-info";
-    var inprocess = "text-info";
-    var completed = "text-info";
-    var approved = "text-info";
-    var all = "text-info";
+    var pending = "text-white";
+    var inprocess = "text-white";
+    var completed = "text-white";
+    var approved = "text-white";
+    var all = "text-white";
 
     switch (status)
     {
         case "pending":
-            pending = "active text-white bg-info";
+            pending = "active text-white bg-danger";
             break;
         case "inprocess":
-            inprocess = "active text-white bg-info";
+            inprocess = "active text-white bg-danger";
             break;
         case "completed":
-            completed = "active text-white bg-info";
+            completed = "active text-white bg-danger";
             break;
         case "approved":
-            approved = "active text-white bg-info";
+            approved = "active text-white bg-danger";
             break;
         default:
-            all = "active text-white bg-info";
+            all = "active text-white bg-danger";
             break;
 
     }

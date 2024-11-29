@@ -15,6 +15,7 @@ namespace Quillia.Models
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }
+        [Required]
         public string Description { get; set; }
 
         [Required]
@@ -49,6 +50,7 @@ namespace Quillia.Models
         public Categorycs Category { get; set; }
 
         [ValidateNever]
+        [Required]
         public string ImageUrl { get; set; }
     }
 }
