@@ -2,18 +2,23 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy the project file and restore dependencies
-COPY ./*.csproj ./  # Adjust this to your actual project name if needed
+# Copy the .csproj file(s) and restore the dependencies
+COPY Quillia/*.csproj ./  # Copy the .csproj file from the Quillia folder
+
 RUN dotnet restore
 
-# Publish the app
+# Copy the rest of the application files
 COPY . ./ 
+
+# Publish the app
 RUN dotnet publish -c Release -o out
 
 # Use the official ASP.NET runtime image to run the app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 80
+
+# Copy the built application
 COPY --from=build /app/out .
 
 # Command to run the application
