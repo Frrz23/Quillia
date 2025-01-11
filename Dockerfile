@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Copy the .csproj file(s) and restore the dependencies
-COPY Quillia/Quillia.csproj ./ # Copy the .csproj file from the Quillia folder
+COPY Quillia/Quillia.csproj ./ 
 
 RUN dotnet restore
 
